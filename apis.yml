@@ -1,7 +1,0 @@
-aid: us-foods
-url: https://raw.githubusercontent.com/api-evangelist/us-foods/refs/heads/main/apis.yml
-modified: '2026-03-21'
-apis: []
-common:
-  - type: Website
-    url: https://www.us-foods.com

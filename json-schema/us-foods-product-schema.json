@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/us-foods/main/json-schema/us-foods-product-schema.json",
+  "title": "US Foods Product",
+  "description": "Schema for a US Foods catalog product item used in foodservice ordering and PIM synchronization",
+  "type": "object",
+  "properties": {
+    "itemNumber": {
+      "type": "string",
+      "description": "US Foods proprietary product item number"
+    },
+    "gtin": {
+      "type": "string",
+      "description": "Global Trade Item Number (GTIN-14 per GS1 standards)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full product description"
+    },
+    "shortDescription": {
+      "type": "string",
+      "description": "Abbreviated product description for display"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Product brand or manufacturer name"
+    },
+    "category": {
+      "type": "string",
+      "description": "Product category (e.g., Produce, Proteins, Dairy, Dry Goods)"
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Product subcategory"
+    },
+    "packSize": {
+      "type": "string",
+      "description": "Pack size specification (e.g., 4/1 GAL, 6/10 CAN, 40 LB)"
+    },
+    "unitOfMeasure": {
+      "type": "string",
+      "description": "Ordering unit of measure (CS = Case, EA = Each, LB = Pound)"
+    },
+    "netWeight": {
+      "type": "number",
+      "description": "Net weight of the product in the specified unit"
+    },
+    "netWeightUnit": {
+      "type": "string",
+      "description": "Unit for net weight (LB, OZ, KG, G)"
+    },
+    "storageTemp": {
+      "type": "string",
+      "description": "Required storage temperature",
+      "enum": [
+        "frozen",
+        "refrigerated",
+        "ambient",
+        "controlled-ambient"
+      ]
+    },
+    "shelfLifeDays": {
+      "type": "integer",
+      "description": "Shelf life in days from manufacture date"
+    },
+    "ingredients": {
+      "type": "string",
+      "description": "Full ingredient statement"
+    },
+    "allergens": {
+      "type": "object",
+      "description": "Major food allergen information per FSMA/FDA requirements",
+      "properties": {
+        "contains": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["milk", "eggs", "fish", "shellfish", "tree-nuts", "peanuts", "wheat", "soybeans", "sesame"]
+          },
+          "description": "Allergens present in the product"
+        },
+        "mayContain": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Allergens that may be present due to manufacturing"
+        }
+      }
+    },
+    "nutritionFacts": {
+      "type": "object",
+      "description": "Nutritional information per serving",
+      "properties": {
+        "servingSize": {
+          "type": "string",
+          "description": "Serving size description"
+        },
+        "calories": {
+          "type": "integer",
+          "description": "Calories per serving"
+        },
+        "totalFatG": {
+          "type": "number",
+          "description": "Total fat in grams"
+        },
+        "sodiumMg": {
+          "type": "number",
+          "description": "Sodium in milligrams"
+        },
+        "totalCarbohydratesG": {
+          "type": "number",
+          "description": "Total carbohydrates in grams"
+        },
+        "proteinG": {
+          "type": "number",
+          "description": "Protein in grams"
+        }
+      }
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "Product image URLs"
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "Whether the product is currently active in the catalog"
+    },
+    "isExclusive": {
+      "type": "boolean",
+      "description": "Whether this is a US Foods exclusive/proprietary brand product"
+    },
+    "countryOfOrigin": {
+      "type": "string",
+      "description": "Country of origin for the product"
+    }
+  },
+  "required": ["itemNumber", "description", "brand", "packSize"]
+}

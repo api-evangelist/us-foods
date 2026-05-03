@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/us-foods/main/json-schema/us-foods-order-schema.json",
+  "title": "US Foods Order",
+  "description": "Schema for a foodservice distribution order placed through US Foods ordering systems",
+  "type": "object",
+  "properties": {
+    "orderId": {
+      "type": "string",
+      "description": "Unique identifier for the order"
+    },
+    "customerId": {
+      "type": "string",
+      "description": "US Foods customer account number"
+    },
+    "orderDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the order was placed"
+    },
+    "deliveryDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected delivery date"
+    },
+    "status": {
+      "type": "string",
+      "description": "Current order status",
+      "enum": [
+        "draft",
+        "submitted",
+        "confirmed",
+        "picking",
+        "loaded",
+        "in-transit",
+        "delivered",
+        "invoiced",
+        "cancelled"
+      ]
+    },
+    "distributionCenter": {
+      "type": "string",
+      "description": "US Foods distribution center fulfilling the order"
+    },
+    "items": {
+      "type": "array",
+      "description": "Line items in the order",
+      "items": {
+        "$ref": "#/$defs/OrderItem"
+      }
+    },
+    "totalItems": {
+      "type": "integer",
+      "description": "Total number of line items"
+    },
+    "totalCases": {
+      "type": "number",
+      "description": "Total number of cases ordered"
+    },
+    "purchaseOrderNumber": {
+      "type": "string",
+      "description": "Customer's internal purchase order number"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Special delivery instructions or order notes"
+    }
+  },
+  "required": ["orderId", "customerId", "orderDate", "items"],
+  "$defs": {
+    "OrderItem": {
+      "type": "object",
+      "description": "A single product line item in a US Foods order",
+      "properties": {
+        "lineNumber": {
+          "type": "integer",
+          "description": "Line number within the order"
+        },
+        "itemNumber": {
+          "type": "string",
+          "description": "US Foods product item number"
+        },
+        "gtin": {
+          "type": "string",
+          "description": "Global Trade Item Number (GS1 standard)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Product description"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Product brand name"
+        },
+        "packSize": {
+          "type": "string",
+          "description": "Pack size specification (e.g., 4/1 GAL, 6/10 CAN)"
+        },
+        "quantityOrdered": {
+          "type": "number",
+          "description": "Number of cases ordered"
+        },
+        "unitPrice": {
+          "type": "number",
+          "description": "Price per case"
+        },
+        "extendedPrice": {
+          "type": "number",
+          "description": "Total price for this line item"
+        },
+        "unitOfMeasure": {
+          "type": "string",
+          "description": "Unit of measure (CS = Case, EA = Each)"
+        },
+        "allergens": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of allergens present in the product"
+        },
+        "isSubstitute": {
+          "type": "boolean",
+          "description": "Whether this item was substituted for a requested out-of-stock item"
+        }
+      },
+      "required": ["itemNumber", "description", "quantityOrdered"]
+    }
+  }
+}

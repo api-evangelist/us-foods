@@ -1,0 +1,215 @@
+vocabulary:
+  name: US Foods Vocabulary
+  description: >-
+    Domain vocabulary for US Foods foodservice distribution covering ordering,
+    product data, supply chain, and integration concepts.
+  version: '1.0'
+  created: '2026-05-03'
+  modified: '2026-05-03'
+
+domains:
+  - name: Foodservice Distribution
+    description: Core concepts in foodservice distribution and order fulfillment
+    terms:
+      - term: Broadline Distributor
+        definition: >-
+          A foodservice distributor that carries a wide range of products
+          across all categories (proteins, produce, dairy, dry goods, etc.)
+          as opposed to specialty distributors
+        tags:
+          - Distribution
+          - Business Model
+      - term: Pack Size
+        definition: >-
+          The quantity and size specification for a case of product
+          (e.g., 4/1 GAL means 4 one-gallon containers, 6/10 CAN means
+          6 number-10 cans)
+        tags:
+          - Product Data
+          - Ordering
+      - term: Street Stock
+        definition: >-
+          Products carried in regular inventory at a US Foods distribution
+          center available for standard ordering
+        tags:
+          - Inventory
+          - Ordering
+      - term: Drop Ship
+        definition: >-
+          Products shipped directly from a manufacturer or supplier to
+          the customer, bypassing the distribution center
+        tags:
+          - Supply Chain
+          - Fulfillment
+      - term: Catch Weight
+        definition: >-
+          A pricing and ordering method for products sold by actual weight
+          rather than a fixed case weight, common for proteins and produce
+        tags:
+          - Pricing
+          - Product Data
+      - term: Distribution Center (DC)
+        definition: >-
+          A US Foods facility that receives, stores, and ships products
+          to customers within a geographic service area
+        tags:
+          - Operations
+          - Infrastructure
+      - term: Route Driver
+        definition: >-
+          A US Foods delivery driver assigned to a specific geographic
+          route who delivers orders to customers
+        tags:
+          - Operations
+          - Delivery
+      - term: MOXe
+        definition: >-
+          US Foods' proprietary eCommerce and business management platform
+          for customer ordering, inventory management, invoice payment,
+          and menu analytics
+        tags:
+          - Technology
+          - eCommerce
+
+  - name: Product Data Standards
+    description: Standards and concepts for foodservice product information
+    terms:
+      - term: GTIN (Global Trade Item Number)
+        definition: >-
+          A GS1 standard 14-digit identifier for a trade item, used to
+          uniquely identify products across supply chain partners
+        source: GS1
+        tags:
+          - Standards
+          - Product Identity
+      - term: GDSN (Global Data Synchronization Network)
+        definition: >-
+          A GS1 network of interoperable data pools that enables trading
+          partners to exchange standardized product information electronically
+        source: GS1
+        tags:
+          - Standards
+          - Data Exchange
+      - term: PIM (Product Information Management)
+        definition: >-
+          A system for centralizing and managing product data including
+          descriptions, specifications, images, nutritional information,
+          and allergen data
+        tags:
+          - Technology
+          - Data Management
+      - term: Major Food Allergen
+        definition: >-
+          One of the 9 major allergens recognized by FDA under FSMA:
+          milk, eggs, fish, shellfish, tree nuts, peanuts, wheat,
+          soybeans, and sesame
+        source: FDA
+        tags:
+          - Food Safety
+          - Regulatory
+      - term: Country of Origin Labeling (COOL)
+        definition: >-
+          USDA requirement to disclose the country of origin for certain
+          food products on retail packaging
+        source: USDA
+        tags:
+          - Regulatory
+          - Product Data
+
+  - name: EDI Integration
+    description: Electronic Data Interchange concepts for B2B ordering
+    terms:
+      - term: EDI 850
+        definition: >-
+          The X12 transaction set for a Purchase Order, used by customers
+          to send orders to US Foods electronically
+        source: X12/ANSI
+        tags:
+          - EDI
+          - B2B Integration
+      - term: EDI 855
+        definition: >-
+          The X12 transaction set for a Purchase Order Acknowledgment,
+          sent by US Foods to confirm receipt and acceptance of an order
+        source: X12/ANSI
+        tags:
+          - EDI
+          - B2B Integration
+      - term: EDI 856
+        definition: >-
+          The X12 transaction set for an Advance Ship Notice (ASN),
+          sent when an order is dispatched from the distribution center
+        source: X12/ANSI
+        tags:
+          - EDI
+          - B2B Integration
+      - term: EDI 810
+        definition: >-
+          The X12 transaction set for an Invoice, used by US Foods to
+          submit billing electronically after delivery
+        source: X12/ANSI
+        tags:
+          - EDI
+          - B2B Integration
+      - term: Value-Added Network (VAN)
+        definition: >-
+          A third-party network service that facilitates EDI document
+          exchange between trading partners
+        tags:
+          - EDI
+          - Infrastructure
+
+  - name: Technology Platform
+    description: US Foods technology and digital platform concepts
+    terms:
+      - term: Menu IQ
+        definition: >-
+          US Foods' AI-powered menu profitability analysis tool integrated
+          into MOXe that helps operators optimize menu pricing and food costs
+        tags:
+          - Technology
+          - AI
+          - Analytics
+      - term: Data Mesh
+        definition: >-
+          US Foods' distributed data architecture using Apache Kafka and
+          Confluent Cloud to manage event streaming across mainframes,
+          databases, and microservices
+        tags:
+          - Technology
+          - Architecture
+      - term: Food Cost Calculator
+        definition: >-
+          A tool in MOXe that allows operators to track and analyze food
+          costs against budget
+        tags:
+          - Analytics
+          - Operations
+
+api_properties:
+  integration_methods:
+    - EDI (X12 transactions)
+    - GS1 GDSN (product data sync)
+    - MOXe eCommerce portal
+    - Apicbase procurement integration
+    - Cleo VAN integration
+
+  product_categories:
+    - Proteins and Seafood
+    - Produce
+    - Dairy and Cheese
+    - Dry Grocery and Canned Goods
+    - Frozen Foods
+    - Beverages
+    - Paper and Disposables
+    - Cleaning and Chemical Supplies
+    - Equipment and Smallwares
+
+  exclusive_brands:
+    - "Chef's Line"
+    - "Rykoff Sexton"
+    - "Metro Diner"
+    - "Molly's Kitchen"
+    - "Devonshire"
+    - "Monarch"
+    - "Harvest Value"

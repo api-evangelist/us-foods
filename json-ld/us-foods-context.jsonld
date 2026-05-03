@@ -1,0 +1,61 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "gs1": "https://www.gs1.org/voc/",
+    "usf": "https://www.usfoods.com/ns/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "FoodserviceOrder": "schema:Order",
+    "FoodserviceProduct": "schema:Product",
+    "OrderLineItem": "schema:OrderItem",
+    "FoodServiceProvider": "schema:FoodService",
+    "DistributionCenter": "schema:Warehouse",
+
+    "id": "@id",
+    "type": "@type",
+
+    "orderId": "schema:orderNumber",
+    "customerId": "schema:customer",
+    "orderDate": {
+      "@id": "schema:orderDate",
+      "@type": "xsd:dateTime"
+    },
+    "deliveryDate": {
+      "@id": "schema:expectedArrivalUntil",
+      "@type": "xsd:date"
+    },
+    "status": "schema:orderStatus",
+    "items": "schema:orderedItem",
+
+    "itemNumber": "gs1:gtin",
+    "gtin": "gs1:gtin",
+    "description": "schema:description",
+    "brand": "schema:brand",
+    "packSize": "gs1:packagingType",
+    "ingredients": "schema:ingredients",
+    "allergens": "schema:hasAllergen",
+    "calories": "schema:calories",
+    "servingSize": "schema:servingSize",
+    "countryOfOrigin": "schema:countryOfOrigin",
+    "isActive": "schema:discontinued",
+    "images": {
+      "@id": "schema:image",
+      "@type": "@id"
+    },
+
+    "quantityOrdered": "schema:orderQuantity",
+    "unitPrice": "schema:price",
+    "unitOfMeasure": "schema:unitCode",
+
+    "Organization": {
+      "@id": "schema:Corporation",
+      "name": "US Foods",
+      "url": "https://www.usfoods.com",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q7884960",
+        "https://www.dnb.com/business-directory/company-profiles.us_foods_holding_corp.html"
+      ]
+    }
+  }
+}

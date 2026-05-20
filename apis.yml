@@ -1,6 +1,9 @@
 aid: us-foods
 url: >-
   https://raw.githubusercontent.com/api-evangelist/us-foods/refs/heads/main/apis.yml
+common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/usfoods
 apis:
   - aid: us-foods:moxe-ordering-platform
     name: US Foods MOXe eCommerce Platform

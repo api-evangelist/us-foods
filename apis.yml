@@ -2,6 +2,8 @@ aid: us-foods
 url: >-
   https://raw.githubusercontent.com/api-evangelist/us-foods/refs/heads/main/apis.yml
 common:
+  - type: DomainSecurity
+    url: security/us-foods-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/usfoods
 apis:

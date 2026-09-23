@@ -1,7 +1,9 @@
 ---
 title: Improve Restaurant Efficiency With AI
 url: https://www.usfoods.com/tools-tips-and-ideas/articles-and-publications/articles/improve-restaurant-efficiency-with-ai-
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"US Foods" press release artificial intelligence'
 position: 2
 source: serpapi-google

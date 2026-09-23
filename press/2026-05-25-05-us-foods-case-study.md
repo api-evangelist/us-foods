@@ -1,7 +1,9 @@
 ---
 title: US Foods Case Study
 url: https://aws.amazon.com/solutions/case-studies/us-foods-case-study/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"US Foods" press release artificial intelligence'
 position: 5
 source: serpapi-google

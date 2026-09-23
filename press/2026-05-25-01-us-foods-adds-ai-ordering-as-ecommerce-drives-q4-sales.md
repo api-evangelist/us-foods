@@ -1,7 +1,9 @@
 ---
 title: US Foods adds AI ordering as ecommerce drives Q4 sales ...
 url: https://www.digitalcommerce360.com/2026/02/13/us-foods-ai-ordering-tools-sales-q4-2025/
-date: '2026-05-25'
+published: '2026-02-13'
+date_basis: url-derived
+harvested: '2026-05-25'
 query: '"US Foods" press release artificial intelligence'
 position: 1
 source: serpapi-google

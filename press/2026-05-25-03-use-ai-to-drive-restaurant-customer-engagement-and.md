@@ -1,7 +1,9 @@
 ---
 title: Use AI to Drive Restaurant Customer Engagement and ...
 url: https://www.usfoods.com/tools-tips-and-ideas/articles-and-publications/articles/use-ai-to-drive-restaurant-customer-engagement-and-loyalty
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"US Foods" press release artificial intelligence'
 position: 3
 source: serpapi-google

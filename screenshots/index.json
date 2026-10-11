@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "us-foods",
+    "captured_at": "2026-10-11T193244",
+    "source_url": "https://usfoods.com",
+    "source_type": "Website",
+    "file": "us-foods-2026-10-11T193244.png",
+    "bytes": 556537,
+    "capture": "playwright-local"
+  }
+]
